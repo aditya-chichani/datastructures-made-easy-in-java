@@ -12,15 +12,12 @@
 
 package chapter06trees;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class BinarySearchTreeNode extends BinaryTreeNode{
 	int data;
 	BinarySearchTreeNode left;
 	BinarySearchTreeNode right;
-	static ArrayList<BinarySearchTreeNode> info = new ArrayList<>();
-	static BinarySearchTreeNode predecessor;
-	static int flag=0;
 
 	BinarySearchTreeNode(int x) {
 		data = x;
@@ -40,27 +37,5 @@ public class BinarySearchTreeNode extends BinaryTreeNode{
 			root.right = AdiInsertInBST(root.getRight(),data);
 		 return root;
 	}
-
-	public static BinaryTreeNode AdiDeleteInBST(BinarySearchTreeNode root,int data)
-	{
-		BinarySearchTreeNode nodeParent = AdiDeleteInBSTHelper(root,null,data);
-	}
-
-	private static BinarySearchTreeNode AdiDeleteInBSTHelper(BinarySearchTreeNode root, BinarySearchTreeNode parent, int data) {
-		if(root == null)
-		{
-			return parent;
-		}
-		BinarySearchTreeNode ans = AdiDeleteInBSTHelper(root.left,root,data);
-		if(flag == 1)
-			return ans;
-		if(root.data == data)
-		{  flag
-			return parent;
-		}
-		predecessor = root;
-
-	}
-
 }
 
