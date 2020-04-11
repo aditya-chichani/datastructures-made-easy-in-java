@@ -15,7 +15,7 @@ public class MergeTwoSortedArrays {
 	public void merge(int A[], int m, int B[], int n) {
 		while (n > 0) {
 			// the original A has all merged into the new A, and merge the left
-			// B
+			// Better than your insertion sort merge solution, the element directly goes to its correct position, No. of shifts minimized
 			if (m <= 0 || A[m - 1] < B[n - 1])
 				A[n + m - 1] = B[--n];
 			else
