@@ -10,6 +10,7 @@ public class MainApplication {
        //InsertionSort.insertionSort(nums);
         MergeSort.mergeSort(nums);
         //ShellSort.shellSort(nums);
+       // AdiQuickSort.quickSort(nums);
         System.out.println(Arrays.toString(nums));
     }
 }

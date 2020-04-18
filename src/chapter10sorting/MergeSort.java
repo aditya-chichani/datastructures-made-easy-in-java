@@ -17,19 +17,36 @@ public class MergeSort {
     }
 
     private static void merge(int[] nums, int n1start, int n1size, int n2start, int n2size) {
-        int j,val;
-        // Insertion Sort :)
-        for(int i=n2start;i<n2start+n2size;i++)
+        int[] arr1 = new int[n1size];
+        int[] arr2 = new int[n2size];
+
+        for(int l=0,k =n1start; k<n1start+n1size;k++,l++)
+            arr1[l]=nums[k];
+
+        for(int l=0,k =n2start; k<n2start+n2size;k++,l++)
+            arr2[l]=nums[k];
+
+        int i=0,j=0,count=0;
+        while(i<arr1.length && j<arr2.length)
         {
-            val=nums[i];
-            j=n1start+n1size-1;
-            while(j>=0 && nums[j]>val)
+            if(arr1[i]<arr2[i])
             {
-                nums[j+1]=nums[j];
-                j--;
+                nums[count]=arr1[i];
+                i++;
             }
-            nums[j+1]=val;
-            n1size++;
+            else{
+                nums[count]=arr2[j];
+                j++;
+            }
+            count++;
+        }
+        while(i<arr1.length)
+        {
+            nums[count++]=arr1[i++];
+        }
+        while(j<arr2.length)
+        {
+            nums[count++]=arr2[j++];
         }
     }
 

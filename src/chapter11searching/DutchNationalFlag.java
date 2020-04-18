@@ -12,7 +12,7 @@
 
 package chapter11searching;
 
-public class DutchNationalFlag {
+public class DutchNationalFlag {   // 3 way quick sort is based on this
 	public static int[] dutchNationalFlag(int[] A) {
         int mid = -1;   		//tracks 1
         int left = 0;     		//tracks 0
