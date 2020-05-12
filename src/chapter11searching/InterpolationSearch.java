@@ -21,8 +21,10 @@ public class InterpolationSearch {
             if (A[high] - A[low] == 0)
                 return (low + high)/2;
             /** out of range is possible  here **/
-             mid = low + ((data - A[low]) * (high - low)) / (A[high] - A[low]);  
- 
+            mid = low + ((data - A[low]) * (high - low)) / (A[high] - A[low]);   /** This
+             is the exact position at which the data should be in if the elements are uniformly distributed
+             **/
+
              if (A[mid] < data)
                  low = mid + 1;
              else if (A[mid] > data)
